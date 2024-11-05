@@ -8,3 +8,7 @@
 - JPA / Hibernate: For ORM and database interactions
 - MySQL: Database for data persistence (configurable to other databases if needed)
 - Maven: For dependency management and project build
+
+# Features
+- Add New Product: Create and store details for new products.
+- Retrieve Products: Retrieve a list of all products stored in the system.

@@ -1,6 +1,8 @@
 package com.portfolio.renato.ecommerce.domain;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import com.portfolio.renato.ecommerce.controllers.dto.CreateProductDTO;
@@ -9,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 /**
  * @author Renato Oliveira, Software Engineer
@@ -17,12 +20,14 @@ import jakarta.persistence.Id;
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String name;
 	private String description;
 	private BigDecimal unitPrice;
 	private Integer quantity;
+	@ManyToMany(mappedBy = "products")
+	private List<Order> orders = new ArrayList<Order>();
 
 	public Product() {
 		super();
